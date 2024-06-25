@@ -55,20 +55,6 @@ model.to(device)
 optimizer = AdamW(model.parameters(), lr=1e-5)
 num_epochs = 3
 model.train()
-for epoch in tqdm(range(num_epochs), desc='Epoch Progress'):
-    print(f"Epoch {epoch+1}")
-    total_loss = 0
-    train_loader = [...]  # Your DataLoader
-    for i, batch in enumerate(tqdm(train_loader, desc='Batch Progress', leave=False)):
-        batch = {k: v.to(device) for k, v in batch.items()}
-        outputs = model(**batch)
-        loss = outputs.loss
-        loss.backward()
-        optimizer.step()
-        optimizer.zero_grad()
-        total_loss += loss.item()
-    avg_loss = total_loss / len(train_loader)
-    print(f"Epoch {epoch+1}, Loss: {avg_loss}")
 
 for epoch in tqdm(range(num_epochs), desc='Epoch Progress'):
     print(f"Epoch {epoch+1}")
