@@ -2,3 +2,8 @@
 data
 GraphModel
 SequenceModel/codebert-base-tokenizer
+.DS_Store
+*.npy
+*.py
+train_script.py
+*.json
